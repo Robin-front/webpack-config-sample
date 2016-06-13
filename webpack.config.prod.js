@@ -46,6 +46,9 @@ module.exports = {
       }, { // 转换 8k 以下的图片为 base64,减少请求
         test: /\.(png|jpe?g|gif)$/,
         loader: 'url-loader?limit=8192&name=imgs/[name]-[hash].[ext]'
+      },{  // 模板引擎loader
+        test: /\.handlebars$/,
+        loader: __dirname + "/../../?helperDirs[]=" + __dirname + "/helpers"
       }
     ]
   }
