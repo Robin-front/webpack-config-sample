@@ -17,6 +17,11 @@ module.exports = {
       },
     }),
     new webpack.optimize.OccurenceOrderPlugin(), // 通过一些计算方式减少chunk的大小的插件
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
+      chunks: chunks, // 所有入口文件 数组
+      minChunks: chunks.length // 提取所有entry共同依赖的模块
+    }),
     new HtmlWebpackPlugin({ // html生成插件
       template: './src/index.html',
       hash: false,
