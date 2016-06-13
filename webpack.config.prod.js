@@ -11,13 +11,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
+    new webpack.optimize.UglifyJsPlugin({ // 压缩js插件
       compressor: {
         warnings: false,
       },
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new HtmlWebpackPlugin({
+    new webpack.optimize.OccurenceOrderPlugin(), // 通过一些计算方式减少chunk的大小的插件
+    new HtmlWebpackPlugin({ // html生成插件
       template: './src/index.html',
       hash: false,
       favicon: './src/favicon.ico',
@@ -33,9 +33,20 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-    }]
+    loaders: [//加载器
+      { // 从js 提取分离 css
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      }, {
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract('css!less')
+      }, { // 加载字体，svg文件
+        test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader?name=fonts/[name].[ext]'
+      }, { // 转换 8k 以下的图片为 base64,减少请求
+        test: /\.(png|jpe?g|gif)$/,
+        loader: 'url-loader?limit=8192&name=imgs/[name]-[hash].[ext]'
+      }
+    ]
   }
 }
