@@ -1,4 +1,4 @@
-import style from './index.css'
+import style from './index.less'
 import dialog from 'components/dialog'
 import $ from 'components/jquery'
 

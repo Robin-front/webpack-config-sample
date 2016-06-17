@@ -31,26 +31,19 @@ var getCfgEntry = function(){
 
 var chunks = Object.keys(getCfgEntry);
 var webpackConfigs = {
-  devtool: 'source-map',
   entry: getCfgEntry,
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'js/[name].js',
+    filename: 'js/[name].[hash].js',
 		chunkFilename: 'js/[chunkhash].js'
   },
   resolve: {
     root: [
-      path.resolve('src'),
-      // path.resolve('.')
+      path.resolve('src')
     ],
     extensions: ['', '.js']
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({ // 压缩js插件
-      compressor: {
-        warnings: false,
-      },
-    }),
     new webpack.optimize.OccurenceOrderPlugin(), // 通过一些计算方式减少chunk的大小的插件
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
@@ -58,7 +51,7 @@ var webpackConfigs = {
       minChunks: chunks.length // 提取所有entry共同依赖的模块
     }),
     // css 提取插件
-    new ExtractTextPlugin('reiki.[contenthash].css', {
+    new ExtractTextPlugin('css/reiki.[contenthash].css', {
       allChunks: true // 所有css打包到一个文件
     })
   ],
@@ -69,13 +62,13 @@ var webpackConfigs = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader")
       }, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('css!less')
+        loader: ExtractTextPlugin.extract('style', 'css!less')
       }, { // 加载字体，svg文件
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
       }, { // 转换 8k 以下的图片为 base64,减少请求
         test: /\.(png|jpe?g|gif)$/,
-        loader: 'url-loader?limit=8192&name=imgs/[name]-[hash].[ext]'
+        loader: 'url-loader?limit=8192&name=images/[name]-[hash].[ext]'
       },{  // 模板引擎loader
         test: /\.handlebars$/,
         loader: "handlebars"
@@ -98,7 +91,7 @@ chunks.forEach(function(pathname) {
       filename: './' + pathname + '.html', //生成的html存放路径，相对于path
       template: './src/page/index/index.html', //html模板路径
       inject: 'body', //js插入的位置，true/'head'/'body'/false
-      hash: true, //为静态资源生成hash值
+      hash: false, //为静态资源生成hash值
       chunks: ['vendors', pathname],//需要引入的chunk，不配置就会引入所有页面的资源
       minify: { //压缩HTML文件
           removeComments: true, //移除HTML中的注释
@@ -109,5 +102,13 @@ chunks.forEach(function(pathname) {
       }
   }));
 });
-
+if (process.env.NODE_ENV === 'production') {
+    webpackConfigs.plugins.push(new webpack.optimize.UglifyJsPlugin({ // 压缩js插件
+      compressor: {
+        warnings: false,
+      },
+    }))
+} else {
+    webpackConfigs.devtool = 'source-map';
+}
 module.exports = webpackConfigs

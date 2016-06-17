@@ -1,2 +1,0 @@
-webpackJsonp([2],{0:function(t,n,u){"use strict";function e(t){return t&&t.__esModule?t:{"default":t}}var i=u(82),c=(e(i),u(31)),f=e(c),o=u(18),a=e(o),l=function(){alert("hey reiki~, this is about"),(0,a["default"])(".btn").click(function(){(0,f["default"])()})};l()},82:function(t,n){}});
-//# sourceMappingURL=about.js.map
