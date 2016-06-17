@@ -3,7 +3,7 @@ var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+var production = (process.env.NODE_ENV === 'production')
 
 //循环文件夹内的文件
 function foreachFolder(path, cb){
@@ -23,15 +23,25 @@ var getCfgEntry = function(){
     var entry = {};
     foreachFolder('./src/page/',function(list){
       list.forEach(function(item){
-        entry[item[0]] = item[1]
+        entry[item[0]] = [item[1]]
       })
     });
     return entry;
 }();
 
 var chunks = Object.keys(getCfgEntry);
+var entries = (function(){
+  if (!production) {
+    chunks.forEach(function(key) {
+      getCfgEntry[key].push('webpack-dev-server/client?http://localhost:8080')
+      getCfgEntry[key].push('webpack/hot/dev-server')
+    })
+  }
+  return getCfgEntry
+})()
+console.log('entries', entries);
 var webpackConfigs = {
-  entry: getCfgEntry,
+  entry: entries,
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'js/[name].[hash].js',
@@ -83,6 +93,11 @@ var webpackConfigs = {
     presets: ['es2015', 'stage-0'],
     plugins: ["transform-runtime"]
   },
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+    inline: true
+  }
 }
 
 chunks.forEach(function(pathname) {
@@ -102,7 +117,7 @@ chunks.forEach(function(pathname) {
       }
   }));
 });
-if (process.env.NODE_ENV === 'production') {
+if (production) {
     webpackConfigs.plugins.push(new webpack.optimize.UglifyJsPlugin({ // 压缩js插件
       compressor: {
         warnings: false,
@@ -110,5 +125,6 @@ if (process.env.NODE_ENV === 'production') {
     }))
 } else {
     webpackConfigs.devtool = 'source-map';
+    webpackConfigs.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 module.exports = webpackConfigs
