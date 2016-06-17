@@ -80,7 +80,8 @@ var webpackConfigs = {
         loader: 'url-loader?limit=8192&name=images/[name]-[hash].[ext]'
       },{  // 模板引擎loader
         test: /\.handlebars$/,
-        loader: "handlebars"
+        loader: "handlebars",
+        query: { helpersDir: path.join(__dirname, 'helpers') }
       },{
         test: /\.js$/,
         exclude: /node_modules/,
