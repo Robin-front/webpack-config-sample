@@ -7,7 +7,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/dev-server',
-    './src/index'
+    './src/page/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -30,6 +30,12 @@ module.exports = {
     loaders: [{
       test: /\.css$/,
       loaders: ['style', 'css']
+    }, {
+      test: /\.less$/,
+      loader: 'style!css!less'
+    },{  // 模板引擎loader
+      test: /\.handlebars$/,
+      loader: __dirname + "/../../?helperDirs[]=" + __dirname + "/helpers"
     }]
   },
   devServer: {
