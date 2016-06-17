@@ -31,15 +31,14 @@ var getCfgEntry = function(){
 
 var chunks = Object.keys(getCfgEntry);
 var entries = (function(){
-  if (!production) {
+  if (!production) { // 添加热加载
     chunks.forEach(function(key) {
-      getCfgEntry[key].push('webpack-dev-server/client?http://localhost:8080')
-      getCfgEntry[key].push('webpack/hot/dev-server')
+      getCfgEntry[key].push('webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server')
     })
   }
   return getCfgEntry
 })()
-console.log('entries', entries);
+
 var webpackConfigs = {
   entry: entries,
   output: {
@@ -97,6 +96,7 @@ var webpackConfigs = {
     contentBase: './dist',
     hot: true,
     inline: true
+    // port: '8080'
   }
 }
 
@@ -117,14 +117,16 @@ chunks.forEach(function(pathname) {
       }
   }));
 });
-if (production) {
-    webpackConfigs.plugins.push(new webpack.optimize.UglifyJsPlugin({ // 压缩js插件
-      compressor: {
-        warnings: false,
-      },
-    }))
-} else {
-    webpackConfigs.devtool = 'source-map';
-    webpackConfigs.plugins.push(new webpack.HotModuleReplacementPlugin());
+if (production) { // 生产环境
+  webpackConfigs.plugins.push(new webpack.optimize.UglifyJsPlugin({ // 压缩js插件
+    compressor: {
+      warnings: false,
+    },
+  }));
+} else { // 开发环境
+  // 添加 source-map
+  webpackConfigs.devtool = 'source-map';
+  // 添加热加载
+  webpackConfigs.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 module.exports = webpackConfigs
