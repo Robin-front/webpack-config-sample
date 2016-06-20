@@ -4,7 +4,6 @@ var webpack = require('webpack')
 var cssnano = require('cssnano')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var autoprefixer = require('autoprefixer');
 var production = (process.env.NODE_ENV === 'production')
 
 //循环文件夹内的文件
@@ -40,7 +39,7 @@ var entries = (function(){
   }
   return getCfgEntry
 })()
-
+entries.vendors = ['vendors/index'];//第三方库集中在这里 import
 var webpackConfigs = {
   entry: entries,
   output: {
@@ -52,9 +51,17 @@ var webpackConfigs = {
     root: [
       path.resolve('src')
     ],
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
+    alias: {
+      'jquery': 'vendors/jquery' // 直接指定模块别名，减少webpack搜索时间
+    }
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery", // 这个可以使$(jquery)变成全局变量，不需要require('jquery')
+      jQuery: "jquery", // 有些插件不用 $而用 jQuery
+      'window.jQuery': "jquery"
+    }),
     new webpack.optimize.OccurenceOrderPlugin(), // 通过一些计算方式减少chunk的大小的插件
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
@@ -146,6 +153,7 @@ if (production) { // 生产环境
   // 添加 source-map
   webpackConfigs.devtool = 'source-map';
   // 添加热加载
-  webpackConfigs.plugins.push(new webpack.HotModuleReplacementPlugin());
+  webpackConfigs.plugins.push(new webpack.HotModuleReplacementPlugin()); // 代码热替换
+  webpackConfigs.plugins.push(new webpack.NoErrorsPlugin()); // 报错但不退出webpack进程
 }
 module.exports = webpackConfigs
