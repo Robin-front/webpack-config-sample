@@ -1,8 +1,10 @@
 var fs = require('fs');
 var path = require('path')
 var webpack = require('webpack')
+var cssnano = require('cssnano')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var autoprefixer = require('autoprefixer');
 var production = (process.env.NODE_ENV === 'production')
 
 //循环文件夹内的文件
@@ -68,10 +70,12 @@ var webpackConfigs = {
     loaders: [//加载器
       { // 从js 提取分离 css
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract("style-loader", 'css-loader!postcss')
       }, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style', 'css!less')
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss!less')
       }, { // 加载字体，svg文件
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
@@ -93,6 +97,20 @@ var webpackConfigs = {
     presets: ['es2015', 'stage-0'],
     plugins: ["transform-runtime"]
   },
+  postcss: [
+    cssnano({
+      autoprefixer: { // 添加css浏览器前缀
+        add: true,
+        remove: true,
+        browsers: ['last 2 versions']
+      },
+      discardComments: { // 删除所有css注释
+        removeAll: true
+      },
+      safe: true,
+      sourcemap: true
+    })
+  ],
   devServer: {
     contentBase: './dist',
     hot: true,
