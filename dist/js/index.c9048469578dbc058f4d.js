@@ -1,0 +1,1 @@
+webpackJsonp([1],{0:function(n,t,i){n.exports=i(49)},49:function(n,t,i){(function(n){"use strict";function t(n){return n&&n.__esModule?n:{"default":n}}var c=i(88),e=(t(c),i(31)),o=t(e),u=function(){alert("hey reiki~,this is index~"),n(".btn").click(function(){(0,o["default"])()}),console.log("$",n.fn)};u()}).call(t,i(10))},88:function(n,t){}});
