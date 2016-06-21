@@ -1,6 +1,6 @@
 import style from './index.less'
 import dialog from 'components/dialog'
-import $ from 'components/jquery'
+// import $ from 'components/jquery'
 
 const robin = () => {
   alert('hey reiki~,this is index~');
@@ -8,6 +8,7 @@ const robin = () => {
   $('.btn').click(function() {
 		dialog();
   });
+  console.log('$', $.fn);
 }
 
 robin()

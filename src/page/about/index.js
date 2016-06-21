@@ -1,6 +1,6 @@
 import style from './index.css'
 import dialog from 'components/dialog'
-import $ from 'components/jquery'
+// import $ from 'components/jquery'
 
 const robin = () => {
   alert('hey reiki~, this is about');

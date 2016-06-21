@@ -1,4 +1,4 @@
-import $ from 'components/jquery'
+// import $ from 'components/jquery'
 //加载模块css
 require('./dialog.css');
 //import './dialog.css'
