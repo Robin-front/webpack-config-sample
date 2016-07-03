@@ -17,7 +17,7 @@
       }
     },
     "dev": {
-      "command": "webpack-dev-server -d --open --host 0.0.0.0 --progress --colors",
+      "command": "nodemon --exec webpack-dev-server --inline -d --open --host 0.0.0.0 --progress --colors",
       "env": {
         "DEBUG": "app:*"
       }
@@ -48,10 +48,17 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
     "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "html-res-webpack-plugin": "0.0.7",
     "html-withimg-loader": "^0.1.13",
     "img-loader": "^1.2.2",
+    "nodemon": "^1.9.2",
     "postcss-loader": "^0.9.1",
+    "postcss-sprites": "^3.1.2",
     "rimraf": "^2.5.2",
-    "webpack-dev-server": "^1.14.1"
+    "sprite-webpack-plugin": "^0.3.5",
+    "transfer-webpack-plugin": "^0.1.4",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-spritesmith": "^0.2.5"
   }
 }
