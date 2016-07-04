@@ -1,2 +1,3 @@
-import './jquery'
-import './jquery.qrcode'
+import './zepto'
+import './sm'
+import './sm.extend'

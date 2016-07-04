@@ -1,14 +1,12 @@
 import style from './index.less'
-import dialog from 'components/dialog'
-// import $ from 'components/jquery'
+import swiper from 'vendors/swiper.min'
 
 const robin = () => {
-  alert('hey reiki~,this is index~');
   // 增加事件
-  $('.btn').click(function() {
-		dialog();
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true
   });
-  console.log('$', $.fn);
 }
 
 robin()

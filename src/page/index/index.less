@@ -2,6 +2,98 @@
 
 body {
   background-color: #e8e8e8;
-  border-radius: 8px;
-  flex: 1;
+}
+.title{
+  background-color: #0099FF;
+  color: #fff;
+}
+.content{
+  padding-bottom: 1rem;
+}
+
+.swiper-container{
+  padding-bottom: 0;
+}
+.swiper-container-horizontal > .swiper-pagination{
+  bottom: 0.1rem;
+}
+.swiper-slide{
+  img{
+    width: 100%;
+  }
+}
+.swiper-pagination-bullet{
+  width: .3rem;
+  height: .3rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: with ease-in-out .6s;
+}
+.swiper-pagination-bullet-active{
+  width: .6rem;
+  border-radius: .3rem;
+}
+.box, .sub-menu{
+  padding: .5rem;
+  font-size: .7rem;
+  color: #666;
+  background-color: #fff;
+}
+.sub-item{
+  text-align: center;
+
+  img{
+    width: 50%;
+    border-radius: 30%;
+  }
+}
+.chongzhi{
+  position: relative;
+  margin-top: .5rem;
+  padding-bottom: 37.8%;
+  background: #fff url(imgs/chongzhi.png) no-repeat 50% 50%;
+  background-size: 90%;
+
+  .chongzhi-box{
+    position: absolute;
+    bottom: .5rem;
+    right: 1rem;
+
+    input{
+      border: 1px solid #ccc;
+      line-height: 1.3rem;
+      margin-bottom: .5rem;
+      padding: 0 .5rem;
+    }
+  }
+}
+
+.search-menu{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  margin-top: .5rem;
+  background: #fff;
+
+  .box{
+    flex: 1;
+    background: url(imgs/cxhh.png) no-repeat .5rem 50% ;
+    background-size: auto 70%;
+    padding-left: 3rem;
+    border: 1px solid #d8d8d8;
+    border-left: 0;
+
+    & + .box {
+      border-right: 0;
+    }
+  }
+  .column {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1px;
+  }
+  small{
+    color: #999;
+  }
 }
