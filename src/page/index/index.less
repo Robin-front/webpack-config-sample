@@ -3,7 +3,7 @@
 body {
   background-color: #e8e8e8;
 }
-.title{
+.bar .title{
   background-color: #0099FF;
   color: #fff;
 }
@@ -49,7 +49,7 @@ body {
 }
 .chongzhi{
   position: relative;
-  margin-top: .5rem;
+  margin-top: 1rem;
   padding-bottom: 37.8%;
   background: #fff url(imgs/chongzhi.png) no-repeat 50% 50%;
   background-size: 90%;
@@ -72,7 +72,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
-  margin-top: .5rem;
+  margin-top: 1rem;
   background: #fff;
 
   .box{
@@ -95,5 +95,37 @@ body {
   }
   small{
     color: #999;
+  }
+}
+
+.login-info{
+  margin-top: 1rem;
+  background-color: #fff;
+  padding: .3rem;
+
+  .col-33{
+    text-align: center;
+  }
+  .col-33 + .col-33{
+    border-left: 1px solid #d8d8d8;
+  }
+  .demage{
+    color: #F80000;
+  }
+  .user-info{
+    color: #666;
+
+    img{
+      float: left;
+      margin-right: .3rem;
+      border-radius: 50%;
+      width: 1rem;
+      height: 1rem;
+      vertical-align: middle;
+    }
+    .username{
+      margin: 0;
+      font-size: .7rem;
+    }
   }
 }

@@ -138,7 +138,7 @@ var webpackConfigs = {
     }
   },
   devServer: {
-    contentBase: './dist',
+    // contentBase: './dist',
     hot: true,
     inline: true
     // port: '8080'
