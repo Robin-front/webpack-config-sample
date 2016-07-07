@@ -1,3 +1,78 @@
 @import "normalize.css";
 @import "sm.css";
 @import "sm.extend.css";
+.content-gray {
+  background-color: #F0F4F5;
+}
+.bar .title {
+  background-color: #3481D5;
+  color: #fff;
+}
+header.bar .icon {
+  color: #fff;
+}
+.picker-modal .bar .title {
+  background-color: #f7f7f8;
+}
+.text-origin {
+  color: #FA5233;
+}
+/*-提示弹出层 tip_wrap-*/
+.tip_box {
+  background: url("../imgs/global/g_tipbg.gif") repeat-x;
+  font-size: 0.7rem;
+  background-size: auto 100%;
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  top: 2.2rem;
+  width: 100%;
+  height: 2.4rem;
+  padding-left: 0.9rem;
+  font-weight: bold;
+}
+.tip_box:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: " ";
+  width: 1.4rem;
+  height: 95%;
+  background: url("../imgs/my/my_icon32.png") 0 46% no-repeat;
+  background-size: auto 38%;
+}
+.tip_default {
+  color: #FF5F16;
+}
+.tip_gray {
+  color: #666;
+}
+.tip_green {
+  color: #109041;
+}
+/*--验证码--*/
+#getCodes {
+  width: 5rem;
+  font-size: 0.7rem;
+  margin: 0 auto;
+}
+#getCodes.disable {
+  background-color: #ccc;
+}
+
+.bar{
+  .title{
+    .icon-logo{
+      display: inline-block;
+      width: 1.3rem;
+      height: 1.3rem;
+      background: url(../imgs/global/logo.png) no-repeat 50% 50%;
+      background-size: 100%;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}
+
+.button-submit{
+  width: 100%;
+}
