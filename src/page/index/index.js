@@ -1,4 +1,5 @@
-import style from './index.less'
+import './index.less'
+import './index.html'
 import swiper from 'vendors/swiper.min'
 
 const index = () => {
