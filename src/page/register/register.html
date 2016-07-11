@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>合肥燃气</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="css/vendors.css" charset="utf-8">
+  <link rel="stylesheet" href="css/register.css" charset="utf-8">
+</head>
+
+<body>
+  <div class="page page-current">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left" href="javascript: history.back();"></a>
+      <h1 class="title"><i class="icon-logo"></i>用户注册</h1>
+    </header>
+    <div class="content">
+      <form class="register-form J_register_form" action="">
+        <div class="list-block">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title label">手机号码</div>
+                  <div class="item-input">
+                    <input name="tel" type="tel" placeholder="请填写正确的手机号码">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title label">验证码</div>
+                  <div class="item-input">
+                    <input name="smscode" type="text" placeholder="请填写4-6位验证码">
+                  </div>
+                  <div class="item-after">
+                    <button class="button button-light get-code J_get_code" type="button">获取验证码</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title label">登录密码</div>
+                  <div class="item-input">
+                    <input name="pwd" type="password" placeholder="请填写6-20位字符">
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="btns">
+            <div class="auto-login">
+              <label class="label-checkbox">
+                <input type="checkbox" name="agreement" checked>
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i> 已阅读并接受
+                  <a class="open-popup" href="#" data-popup=".popup-about">《注册协议》</a>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="content-block">
+            <p>
+              <button type="submit" class="button button-big button-fill button-login">注册</button>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- About Popup -->
+    <div class="popup popup-about">
+      <header class="bar bar-nav">
+        <h1 class="title">注册协议</h1>
+      </header>
+      <div class="content">
+        <div class="content-block">
+          <p>《用户注册协议》是制约用户滥用违法的手段干扰网站的运行的手段。 “法律百科”所提供的各项服务的所有权和运作权属于其运营商。用户必须同意下述所有服务条款并完成注册程序，才能成为“法律百科”的正式会员并使用“法律百科”提供的各项服务。服务条款的修改权归“法律百科”运营商所有。
+          </p>
+
+          <p>一、 “法律百科”运用自己的操作系统，通过国际互联网络等手段为会员提供法律信息交流平台。“法律百科”有权在必要时修改服务条款，服务条款一旦发生变动，将会在重要页面上提示修改内容或通过其他形式告知会员。如果会员不同意所改动的内容，可以主动取消获得的网络服务。如果会员继续享用网络服务，则视为接受服务条款的变动。“法律百科”保留随时修改或中断服务而不需知照会员的权利。“法律百科”行使修改或中断服务的权利，不需对会员或第三方负责。</p>
+
+          <p><a href="#" class="close-popup button button-fill">已阅读</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/vendors.js"></script>
+  <script type="text/javascript" src="js/register.js"></script>
+</body>
+
+</html>
