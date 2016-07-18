@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>合肥燃气</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="css/vendors.css" charset="utf-8">
+  <link rel="stylesheet" href="css/gasQuantity.css" charset="utf-8">
+</head>
+
+<body>
+  <div class="page-group">
+    <div class="page page-current">
+      <header class="bar bar-nav">
+        <a class="icon icon-left pull-left" href="javascript: history.back()"></a>
+        <h1 class="title">燃气用量</h1>
+      </header>
+
+      <div class="content content-gray page-gasQuantity">
+        <div class="list-block media-list">
+          <ul>
+            <li class="item-content">
+              <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 2.2rem;border-radius: 100%;'></div>
+              <div class="item-inner">
+                <div class="item-subtitle">客户编号：<span>6012458</span></div>
+                <div class="item-subtitle">用电地址：<span>杭州西湖文三</span></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="gas-quantity">
+          <p class="tips">阶梯气价？</p>
+          <div class="content-block">
+            <div class="used_dial">
+              <img class="used_point" src="imgs/used/used_point.png" alt="燃气">
+            </div>
+          </div>
+          <div class="row no-gutter legend">
+            <div class="col-33">第一阶梯</div>
+            <div class="col-33">第二阶梯</div>
+            <div class="col-33">第三阶梯</div>
+          </div>
+          <div class="list-block">
+            <ul>
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">5月燃气量</div>
+                  <div class="item-after">xx m<sub>2</sub></div>
+                </div>
+              </li>
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">5月燃气费</div>
+                  <div class="item-after">XX元</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content-block">
+          <a href="#" class="button button-fill button-big gas-history open-popup" data-popup=".popup-history">历史燃气量 <span>详情》</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup popup-history">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left close-popup"></a>
+      <h1 class="title">历史燃气</h1>
+    </header>
+    <div class="content content-gray">
+      <div class="content-block">
+        <canvas id="myChart" width="400" height="400"></canvas>
+      </div>
+
+      <p class="buttons-row"><a href="#" class="button">年份</a><a href="#" class="button active">月份</a></p>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/vendors.js"></script>
+  <script type="text/javascript" src="js/gasQuantity.js"></script>
+</body>
+
+</html>
