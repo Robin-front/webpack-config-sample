@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>合肥燃气</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<link rel="stylesheet" href="css/vendors.css" charset="utf-8">
+	<link rel="stylesheet" href="css/gas.css" charset="utf-8">
+</head>
+
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+			<header class="bar bar-nav">
+				<h1 class="title">用气</h1>
+			</header>
+			<nav class="bar bar-tab">
+				<a class="tab-item" href="/index.html">
+					<span class="icon icon-home"></span>
+					<span class="tab-label">首页</span>
+				</a>
+				<a class="tab-item active" href="/gas.html">
+					<span class="icon icon-settings"></span>
+					<span class="tab-label">用气</span>
+				</a>
+				<a class="tab-item" href="/service.html">
+					<span class="icon icon-message"></span>
+					<span class="tab-label">服务</span>
+				</a>
+				<a class="tab-item" href="/user.html">
+					<span class="icon icon-me"></span>
+					<span class="tab-label">我</span>
+				</a>
+			</nav>
+
+			<div class="content page-gas">
+
+				<div class="user-info">
+					<div class="username"><a href="/bindHouseNum.html">去绑定户号 &gt;</a></div>
+				</div>
+				<div class="summary">
+					<div class="row no-gutter">
+						<a class="col-50" href="/bindHNList.html">
+							月燃气用量 <span>----</span>
+						</a>
+						<a class="col-50" href="/shareHouseNum.html">
+							月燃气费 <span>----</span>
+						</a>
+					</div>
+					<div class="row no-gutter">
+						<a class="col-50" href="/bindHNList.html">
+							年燃气用量 <span>----</span>
+						</a>
+						<a class="col-50" href="/shareHouseNum.html">
+							年燃气费 <span>----</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="feature-box">
+					<div class="row no-gutter">
+						<a class="col-33" href="/paymentStep1.html">
+							<div class="img-box jf"></div>
+							<p>交费</p>
+						</a>
+						<a class="col-33" href="#">
+							<div class="img-box cz"></div>
+							<p>充值</p>
+						</a>
+						<a class="col-33" href="#">
+							<div class="img-box ye"></div>
+							<p>余额</p>
+						</a>
+					</div>
+
+					<div class="row no-gutter">
+						<a class="col-33 open-popup" data-popup=".popup-history" href="#">
+							<div class="img-box record"></div>
+							<p>交费记费</p>
+						</a>
+						<a class="col-33" href="/gasQuantity.html">
+							<div class="img-box gas-quantity"></div>
+							<p>燃气量燃气费</p>
+						</a>
+						<a class="col-33" href="#"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup-history">
+		<header class="bar bar-nav">
+			<a class="icon icon-left pull-left close-popup"></a>
+			<h1 class="title">交易记录</h1>
+		</header>
+		<div class="content content-gray">
+			<div class="list-block media-list">
+				<ul>
+					<li class="item-content">
+						<div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 2.2rem;border-radius: 100%;'></div>
+						<div class="item-inner">
+							<div class="item-subtitle">客户编号：<span>6012458</span></div>
+							<div class="item-subtitle">用电地址：<span>杭州西湖文三</span></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="content-block-title">
+				<div class="pull-right">共计<span class="text-origin">658</span>元</div>
+				<div>共<span class="text-origin">6</span>条记录（默认查询6个月记录）</div>
+			</div>
+			<div class="list-block media-list payment-record">
+				<ul>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="price pull-right">105元</div>
+								<div class="item-subtitle">2016-06-06 12:34:05</div>
+								<div class="item-title">金融机构代扣</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="price pull-right">105元</div>
+								<div class="item-subtitle">2016-06-06 12:34:05</div>
+								<div class="item-title">金融机构代扣</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="price pull-right">105元</div>
+								<div class="item-subtitle">2016-06-06 12:34:05</div>
+								<div class="item-title">金融机构代扣</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="content-block">
+				<a href="/paymentStep1.html" class="button button-fill button-big">交费</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/vendors.js"></script>
+	<script type="text/javascript" src="js/gas.js"></script>
+</body>
+
+</html>
