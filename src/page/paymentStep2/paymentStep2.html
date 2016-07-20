@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>合肥燃气</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="css/vendors.css" charset="utf-8">
+  <link rel="stylesheet" href="css/paymentStep2.css" charset="utf-8">
+</head>
+
+<body>
+  <div class="page-group">
+    <div class="page page-current">
+      <header class="bar bar-nav">
+        <a class="icon icon-left pull-left" href="/paymentStep2.html"></a>
+        <h1 class="title">交费</h1>
+      </header>
+
+      <div class="content page-payment">
+
+        <div class="list-block media-list summary">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner no-border">
+                  <div class="item-subtitle"><span class="text-origin">欠费金额</span> <span>2016年5月</span></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-subtitle total-price">45.03</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <div class="item-content item-link">
+                <div class="item-inner no-border">
+                  <div class="item-subtitle">
+                    <label>客户编号</label>
+                    <span>0154332</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content item-link">
+                <div class="item-inner no-border">
+                  <div class="item-subtitle">
+                    <label>客户名称</label>
+                    <span>937194234</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-text">
+                    <label>应交金额</label>
+                    <span>45.03</span><br>
+                    <small>(其中燃气费45.03元+违约金0.00元)</small>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="" action="/" method="post">
+
+        <div class="content-block-title">请选择支付方式</div>
+        <div class="list-block media-list">
+          <ul>
+            <li>
+              <label class="label-checkbox item-content">
+                <div class="item-media"><img src="imgs/global/g_zfb.png" style='width: 1.5rem;border-radius: 50%;'></div>
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">支付宝</div>
+                    <div class="item-after">
+                      <input type="radio" name="payway" checked>
+                      <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="label-checkbox item-content">
+                <div class="item-media"><img src="imgs/global/g_wx.png" style='width: 1.5rem;border-radius: 50%;'></div>
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">微信支付</div>
+                    <div class="item-after">
+                      <input type="radio" name="payway">
+                      <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="list-block">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title label">其他金额</div>
+                  <div class="item-input">
+                    <input type="text" name="other" placeholder="请输入消费金额">
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <button type="submit" class="button button-fill button-big button-submit">下一步</button>
+        </div>
+
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/vendors.js"></script>
+  <script type="text/javascript" src="js/paymentStep2.js"></script>
+</body>
+
+</html>
