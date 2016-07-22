@@ -2,8 +2,12 @@ var fs = require('fs');
 var path = require('path')
 var webpack = require('webpack')
 var cssnano = require('cssnano')
+// var sprites = require('postcss-sprites').default;
+// var sprite = require('sprite-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+// var HtmlResWebpackPlugin = require('html-res-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var TransferWebpackPlugin = require('transfer-webpack-plugin');
 var production = (process.env.NODE_ENV === 'production')
 
 //循环文件夹内的文件
@@ -34,7 +38,7 @@ var chunks = Object.keys(getCfgEntry);
 var entries = (function(){
   if (!production) { // 添加热加载
     chunks.forEach(function(key) {
-      getCfgEntry[key].push('webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server')
+      getCfgEntry[key].push('webpack-dev-server/client?http://localhost:8888', 'webpack/hot/dev-server')
     })
   }
   return getCfgEntry
@@ -44,7 +48,7 @@ var webpackConfigs = {
   entry: entries,
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'js/[name].[hash:8].js'
+    filename: 'js/[name].js'
 		// chunkFilename: 'js/[chunkhash].js'
   },
   resolve: {
@@ -69,9 +73,18 @@ var webpackConfigs = {
       minChunks: chunks.length // 提取所有entry共同依赖的模块
     }),
     // css 提取插件
-    new ExtractTextPlugin('[name].[contenthash:8].css', {
+    new ExtractTextPlugin('css/[name].css', {
       allChunks: true // 所有css打包到一个文件
-    })
+    }),
+    // 把指定文件夹下的文件复制到指定的目录
+    new TransferWebpackPlugin([
+      {from: 'src/imgs', to: "imgs"}
+    ])
+    // new sprite({
+    //   'source' : __dirname + '/dist/imgs/',
+    //   'imgPath': __dirname + '/dist/imgs/',
+    //   'cssPath': __dirname + '/dist/css/'
+    // })
   ],
   module: {
     loaders: [//加载器
@@ -85,10 +98,13 @@ var webpackConfigs = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss!less')
       }, { // 加载字体，svg文件
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader?name=fonts/[name].[ext]'
+        loader: 'file-loader?publicPath=../&name=fonts/[name].[ext]'
+      }, { // 加载html,php文件
+        test: /\.(html|php)$/,
+        loader: 'file-loader?name=[name].[ext]'
       }, { // 转换 8k 以下的图片为 base64,减少请求
         test: /\.(png|jpe?g|gif)$/,
-        loader: 'url-loader?limit=8192&name=imgs/[name]-[hash].[ext]!img?minimize'
+        loader: 'url-loader?limit=8192&publicPath=../&name=imgs/[name].[ext]!img?minimize'
       },{  // 模板引擎loader
         test: /\.handlebars$/,
         loader: "handlebars-loader?helperDirs[]=" + __dirname + "/helpers"
@@ -115,7 +131,20 @@ var webpackConfigs = {
       },
       safe: true,
       sourcemap: true
-    })
+    }),
+    // sprites({
+    //   // verbose: true,
+    //   // basePath: './',
+    //   stylesheetPath: './dist/',
+    //   spritePath: './dist/imgs/',
+    //   relativeTo: 'rule'
+    //   // outputDimensions: true,
+    //   // padding: 10,
+    //   // groupBy: function (image) {
+    //   //   //将图片分组，可以实现按照文件夹生成雪碧图
+    //   //   return spritesGroupBy(image);
+    //   // },
+    // })
   ],
   imagemin: { // 图片压缩相关配置
     gifsicle: { interlaced: false },
@@ -138,30 +167,30 @@ var webpackConfigs = {
     }
   },
   devServer: {
-    // contentBase: './dist',
-    hot: true,
-    inline: true
-    // port: '8080'
+    contentBase: './dist',
+    // hot: true,
+    // inline: true
+    port: '8888'
   }
 }
 
-chunks.forEach(function(pathname) {
-  webpackConfigs.plugins.push(new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
-      // favicon: './src/images/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
-      filename: './' + pathname + '.html', //生成的html存放路径，相对于path
-      template: 'html-withimg-loader?min=false!./src/page/index/index.html', //html模板路径
-      inject: 'body', //js插入的位置，true/'head'/'body'/false
-      hash: false, //为静态资源生成hash值
-      chunks: ['vendors', pathname],//需要引入的chunk，不配置就会引入所有页面的资源
-      minify: { //压缩HTML文件
-          removeComments: true, //移除HTML中的注释
-          collapseWhitespace: false, //删除空白符与换行符
-          ignoreCustomFragments:[
-              /\{\{[\s\S]*?\}\}/g  //不处理 {{}} 里面的 内容
-          ]
-      }
-  }));
-});
+// chunks.forEach(function(pathname) {
+//   webpackConfigs.plugins.push(new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
+//       // favicon: './src/images/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
+//       filename: './' + pathname + '.html', //生成的html存放路径，相对于path
+//       template: 'html-withimg-loader?min=false!./src/page/'+ pathname +'/'+ pathname +'.html', //html模板路径
+//       inject: 'body', //js插入的位置，true/'head'/'body'/false
+//       hash: false, //为静态资源生成hash值
+//       chunks: ['vendors', pathname],//需要引入的chunk，不配置就会引入所有页面的资源
+//       minify: { //压缩HTML文件
+//           removeComments: true, //移除HTML中的注释
+//           collapseWhitespace: false, //删除空白符与换行符
+//           ignoreCustomFragments:[
+//               /\{\{[\s\S]*?\}\}/g  //不处理 {{}} 里面的 内容
+//           ]
+//       }
+//   }));
+// });
 if (production) { // 生产环境
   webpackConfigs.plugins.push(new webpack.optimize.UglifyJsPlugin({ // 压缩js插件
     compressor: {
@@ -170,7 +199,7 @@ if (production) { // 生产环境
   }));
 } else { // 开发环境
   // 添加 source-map
-  webpackConfigs.devtool = 'source-map';
+  // webpackConfigs.devtool = 'source-map';
   // 添加热加载
   webpackConfigs.plugins.push(new webpack.HotModuleReplacementPlugin()); // 代码热替换
   webpackConfigs.plugins.push(new webpack.NoErrorsPlugin()); // 报错但不退出webpack进程
