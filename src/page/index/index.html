@@ -1,10 +1,145 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>合肥燃气</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<link rel="stylesheet" href="css/vendors.css" charset="utf-8">
+	<link rel="stylesheet" href="css/index.css" charset="utf-8">
 </head>
+
 <body>
-	<div class="g-bd">
-		<input type="button" value="弹窗" class="btn">
+	<div class="page-group">
+		<div class="page page-current">
+			<header class="bar bar-nav">
+				<h1 class="title"><i class="icon-logo"></i>合肥燃气</h1>
+			</header>
+			<nav class="bar bar-tab">
+				<a class="tab-item active" href="/index.html">
+					<span class="icon icon-home"></span>
+					<span class="tab-label">首页</span>
+				</a>
+				<a class="tab-item" href="/gas.html">
+					<span class="icon icon-settings"></span>
+					<span class="tab-label">用气</span>
+				</a>
+				<a class="tab-item" href="/service.html">
+					<span class="icon icon-message"></span>
+					<span class="tab-label">服务</span>
+				</a>
+				<a class="tab-item" href="/user.html">
+					<span class="icon icon-me"></span>
+					<span class="tab-label">我</span>
+				</a>
+			</nav>
+			<div class="content page-index">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="imgs/index/banner.png" alt="banner">
+						</div>
+						<div class="swiper-slide">
+							<img src="imgs/index/banner.png" alt="banner">
+						</div>
+						<div class="swiper-slide">
+							<img src="imgs/index/banner.png" alt="banner">
+						</div>
+						<div class="swiper-slide">
+							<img src="imgs/index/banner.png" alt="banner">
+						</div>
+						<div class="swiper-slide">
+							<img src="imgs/index/banner.png" alt="banner">
+						</div>
+					</div>
+
+					<div class="swiper-pagination"></div>
+				</div>
+
+				<div class="sub-menu">
+					<div class="row no-gutter">
+						<a class="col-25 sub-item" href="/gasQuantity.html">
+							<div class="img rqyl"></div>
+							<span>燃气用量</span>
+						</a>
+						<a class="col-25 sub-item" href="/gas.html">
+							<div class="img jfjl"></div>
+							<span>缴费记录</span>
+						</a>
+						<a class="col-25 sub-item" href="/map.html">
+							<div class="img fwwd"></div>
+							<span>服务网点</span>
+						</a>
+						<a class="col-25 sub-item" href="/notice.html">
+							<div class="img xtgg"></div>
+							<span>系统公告</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="login-info">
+					<div class="user-info clearfix">
+						<img src="imgs/index/in_icon1.png" alt="用户头像">
+						<p class="username">*玮国 | 6120002134</p>
+					</div>
+					<div class="row no-gutter">
+						<div class="col-33">
+							<small class="row-title">4月燃气用量</small><br>
+							<strong>148 <sup>m2</sup></strong>
+						</div>
+						<div class="col-33">
+							<small class="row-title">4月燃气费</small><br>
+							<strong>105.5元</strong>
+						</div>
+						<div class="col-33">
+							<small class="row-title demage">欠费金额</small><br>
+							<strong>0.00元</strong>
+						</div>
+					</div>
+				</div>
+
+				<div class="box chongzhi">
+					<div class="chongzhi-box">
+						<div class="item-input clearfix">
+							<input class="tab-link pull-right" type="text" placeholder="请输入客户编号">
+						</div>
+						<div class="clearfix"> <a href="#" class="button button-fill pull-right">充值</a> </div>
+					</div>
+				</div>
+
+				<div class="search-menu">
+					<div class="column">
+						<a class="box search-hh" href="#">
+							<h3>查询户号</h3>
+							<small>如何查询 &gt;</small>
+						</a>
+						<a class="box bind-hh" href="/bindHouseNum.html">
+							<h3>绑定户号</h3>
+							<small>用户尽在掌握 &gt;</small>
+						</a>
+					</div>
+					<div class="column">
+						<a class="box search-bus" href="#">
+							<h3>查公交</h3>
+							<small>如何查询 &gt;</small>
+						</a>
+						<a class="box search-gas" href="#">
+							<h3>查加油站</h3>
+							<small>如何查询 &gt;</small>
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
 	</div>
+	<script type="text/javascript" src="js/vendors.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
+
 </html>
