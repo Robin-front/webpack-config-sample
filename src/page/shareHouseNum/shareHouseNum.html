@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>合肥燃气</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="css/vendors.css" charset="utf-8">
+  <link rel="stylesheet" href="css/shareHouseNum.css" charset="utf-8">
+</head>
+
+<body>
+  <div class="page-group">
+    <div class="page page-current">
+      <header class="bar bar-nav">
+        <a class="icon icon-left pull-left" href="javascript: history.back()"></a>
+        <h1 class="title">户号共享</h1>
+      </header>
+      <div class="bar bar-header-secondary">
+        <div class="buttons-row">
+          <a href="#tab1" class="tab-link button">绑定户号</a>
+          <a href="#tab2" class="tab-link button active">共享户号</a>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="tabs">
+          <div id="tab1" class="tab">
+            <div class="list-block media-list">
+              <ul>
+                <li>
+                  <div class="item-content">
+                    <div class="item-media">
+                      <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 2.2rem;'>
+                    </div>
+                    <div class="item-inner">
+                      <a href="#" class="button button-warning pull-right">共享</a>
+                      <div class="item-subtitle">客户编号：1231232432</div>
+                      <div class="item-subtitle">未共享</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content">
+                    <div class="item-media">
+                      <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 2.2rem;'>
+                    </div>
+                    <div class="item-inner">
+                      <a href="#" class="button button-warning pull-right">已共享</a>
+                      <div class="item-subtitle">客户编号：1231232432</div>
+                      <div class="item-subtitle">已共享</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <p class="help-block">您可将已绑定户号分享给家人，共享燃气用量</p>
+
+            <div class="tips">
+              <h4 class="tips-title">温馨提示</h4>
+              <p class="tips-content">一个户号仅能被共享
+                <span>3</span>次，为了您的数据安全，请定期管理您的共享列表</p>
+            </div>
+
+          </div>
+          <div id="tab2" class="tab active">
+            <div class="list-block media-list">
+              <ul>
+                <li>
+                  <div class="item-content">
+                    <div class="item-media">
+                      <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 2.2rem;'>
+                    </div>
+                    <div class="item-inner">
+                      <a href="#" class="button button-warning pull-right open-popup">共享</a>
+                      <div class="item-subtitle">客户编号：60123546</div>
+                      <div class="item-subtitle">已绑定</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content">
+                    <div class="item-media">
+                      <img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 2.2rem;'>
+                    </div>
+                    <div class="item-inner">
+                      <a href="#" class="button button-warning pull-right">解绑</a>
+                      <div class="item-subtitle">客户编号：60123543</div>
+                      <div class="item-subtitle">已共享</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="no-share">
+              <div class="img"></div>
+              <p>暂时没有其他燃气用户共享给您</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left close-popup"></a>
+      <h1 class="title">户号共享</h1>
+    </header>
+    <div class="content">
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">手机号码</div>
+                <div class="item-input">
+                  <input type="tel" placeholder="请输入手机号码">
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="help-block">在“合燃宝”注册的用户才能被共享</p>
+      </div>
+      <div class="content-block">
+        <p><a href="#" class="button button-fill button-big close-popup">完成</a></p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/vendors.js"></script>
+  <script type="text/javascript" src="js/shareHouseNum.js"></script>
+</body>
+
+</html>

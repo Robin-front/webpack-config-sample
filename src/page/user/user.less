@@ -1,0 +1,83 @@
+.user-info{
+  position: relative;
+  padding-bottom: 42.5%;
+  background: url(../../imgs/my/my_bannerbg.jpg) no-repeat 50% 50%;
+  background-size: auto 100%;
+
+  .avatar-box{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    margin: auto;
+    width: 4rem;
+    text-align: center;
+
+    .avatar{
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid #e8e8e8;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img{
+        min-width: 100%;
+        min-height: 100%;
+        width: 100%;
+      }
+    }
+    .username{
+      margin: 0;
+      color: #fff;
+      a{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.msg-info, .feature-box{
+  margin-top: .8rem;
+  background-color: #fff;
+  padding: .3rem;
+
+  .col-33{
+    color: #666;
+    text-align: center;
+  }
+  .col-33 + .col-33{
+    border-left: 1px solid #d8d8d8;
+  }
+}
+
+.feature-box{
+  padding: 0;
+
+  .col-33{
+    padding: .3rem;
+    min-height: 4rem;
+  }
+  .row + .row{
+    border-top: 1px solid #d8d8d8;
+  }
+
+  .img-box{
+    margin: auto;
+    width: 2rem;
+    height: 2rem;
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  .bindHN{ background-image: url(../../imgs/my/my_icon1.png); }
+  .shareHN{ background-image: url(../../imgs/my/my_icon2.png); }
+  .changeHN{ background-image: url(../../imgs/my/my_icon3.png); }
+  .message{ background-image: url(../../imgs/my/my_icon4.png); }
+  .safe{ background-image: url(../../imgs/my/my_icon5.png); }
+  .fqa{ background-image: url(../../imgs/my/my_icon6.png); }
+  .about{ background-image: url(../../imgs/my/my_icon7.png); }
+  p{
+    margin: 0;
+    font-size: .8rem;
+  }
+}

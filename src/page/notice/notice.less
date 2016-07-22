@@ -1,0 +1,30 @@
+.page-notice{
+  .cards-list{
+    .stop, .start, .affect{
+      line-height: 1.5rem;
+
+      &:before{
+        content: ' ';
+        display: inline-block;
+        vertical-align: middle;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+    .stop:before{ background-image: url(../../imgs/service/service_icon6.png); }
+    .start:before{ background-image: url(../../imgs/service/service_icon7.png); }
+    .affect:before{ background-image: url(../../imgs/service/service_icon8.png); }
+
+    .item-text{
+      height: auto;
+      -webkit-line-clamp: inherit;
+    }
+  }
+  .card-header{
+    color: #3680D3;
+  }
+}
