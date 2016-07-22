@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>合肥燃气</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="css/vendors.css" charset="utf-8">
+  <link rel="stylesheet" href="css/my.css" charset="utf-8">
+</head>
+
+<body>
+  <div class="page-group">
+    <div class="page page-current">
+      <header class="bar bar-nav">
+        <a class="icon icon-left pull-left" href="javascript: history.back()"></a>
+        <h1 class="title">个人信息</h1>
+      </header>
+      <div class="content content-gray page-my">
+        <div class="list-block">
+          <ul>
+            <li class="item-content  item-avatar">
+              <div class="item-media"><i class="icon-avatar"></i></div>
+              <div class="item-inner">
+                <div class="item-title">个人头像</div>
+                <div class="">
+                  <img class="avatar" src="imgs/global/g_avatar.png" alt="个人头像">
+                </div>
+              </div>
+              <input id="input-avatar" class="input-file" type="file">
+            </li>
+          </ul>
+          <ul>
+            <li class="item-content item-link item-nickname open-popup" data-popup=".popup-nickname">
+              <div class="item-media"><i class="icon-contact"></i></div>
+              <div class="item-inner">
+                <div class="item-title">昵称</div>
+                <div class="item-after">被遗忘的公主</div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="item-content item-link item-age open-popup" data-popup=".popup-age">
+              <div class="item-media"><i class="icon-age"></i></div>
+              <div class="item-inner">
+                <div class="item-title">年龄</div>
+                <div class="item-after">26</div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="item-content item-link item-tel open-popup" data-popup=".popup-mobile">
+              <div class="item-media"><i class="icon-tel"></i></div>
+              <div class="item-inner">
+                <div class="item-title">手机号码</div>
+                <div class="item-after">13800138000</div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="item-content item-link item-address open-popup" data-popup=".popup-address">
+              <div class="item-media"><i class="icon-address"></i></div>
+              <div class="item-inner">
+                <div class="item-title">我的收货地址</div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="item-content item-link item-logout">
+              <div class="item-media"><i class="icon-logout"></i></div>
+              <div class="item-inner">
+                <div class="item-title">退出登录</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="popup popup-nickname">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left close-popup"></a>
+      <h1 class="title">昵称</h1>
+    </header>
+    <div class="content content-gray">
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">昵称</div>
+                <div class="item-input">
+                  <input type="text" placeholder="请输入昵称" value="被遗忘的公主">
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="content-block">
+          <p><a href="#" class="button button-fill button-big">保存</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-age">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left close-popup"></a>
+      <h1 class="title">年龄</h1>
+    </header>
+    <div class="content content-gray">
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">年龄</div>
+                <div class="item-input">
+                  <input type="number" placeholder="请输入年龄" value="26">
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="content-block">
+          <p><a href="#" class="button button-fill button-big">保存</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-mobile">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left close-popup"></a>
+      <h1 class="title">手机号</h1>
+    </header>
+    <div class="content content-gray">
+      <div class="content-block">
+        <div class="mobile-info">
+          <div class="img"></div>
+          <p class="mobile-number">您当前的手机号为 13800138000</p>
+          <small>更换后个人信息不变，下次可以使用新手机号登录</small>
+        </div>
+        <p><a href="/changePhone.html" class="button button-fill button-big">更换手机号</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup-address">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left close-popup"></a>
+      <h1 class="title">收货地址</h1>
+    </header>
+    <div class="content content-gray">
+      <div class="content-block no-address">
+        <div class="img"></div>
+        <p>你没有收货地址，请赶快添加</p>
+      </div>
+      <div class="list-block media-list">
+        <ul>
+          <li class="item-content item-addr">
+            <div class="item-inner">
+              <div class="item-title">被遗弃的公主<span class="tel">13800138000</span></div>
+              <div class="item-text">杭州西湖文三万塘路252号东方通信大厦620东方通信大厦620东方通信大厦620</div>
+            </div>
+            <div class="item-after item-edit"><span class="icon icon-edit"></span></div>
+          </li>
+        </ul>
+        <div class="content-block">
+          <p><a href="/addAddress.html" class="button button-fill button-big add-address">添加新收货地址</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/vendors.js"></script>
+  <script type="text/javascript" src="js/my.js"></script>
+</body>
+
+</html>
