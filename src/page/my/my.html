@@ -103,6 +103,16 @@
               </div>
             </div>
           </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">性别</div>
+                <div class="item-input">
+                  <input class="picker-gender" type="text" placeholder="请输入性别" value="男">
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
         <div class="content-block">
           <p><a href="#" class="button button-fill button-big">保存</a></p>
@@ -163,12 +173,42 @@
       </div>
       <div class="list-block media-list">
         <ul>
-          <li class="item-content item-addr">
-            <div class="item-inner">
-              <div class="item-title">被遗弃的公主<span class="tel">13800138000</span></div>
-              <div class="item-text">杭州西湖文三万塘路252号东方通信大厦620东方通信大厦620东方通信大厦620</div>
+          <!-- li上额外的“swipeout”类 -->
+          <li class="swipeout">
+            <!-- 被“swipeout-content”包裹起来的普通列表元素 -->
+            <div class="swipeout-content">
+              <!-- 你的列表元素放在这里 -->
+              <div class="item-content item-addr">
+                <div class="item-inner">
+                  <div class="item-title">被遗弃的公主<span class="tel">13800138000</span></div>
+                  <div class="item-text">杭州西湖文三万塘路252号东方通信大厦620东方通信大厦620东方通信大厦620</div>
+                </div>
+                <div class="item-after item-edit"><span class="icon icon-edit"></span></div>
+              </div>
             </div>
-            <div class="item-after item-edit"><span class="icon icon-edit"></span></div>
+            <!-- Swipeout actions right -->
+            <div class="swipeout-actions-right">
+              <!-- Swipeout actions links/buttons -->
+              <a class="swipeout-close swipeout-delete" href="#">删除</a>
+            </div>
+          </li>
+          <li class="swipeout">
+            <div class="swipeout-content">
+              <!-- 你的列表元素放在这里 -->
+              <div class="item-content item-addr">
+                <div class="item-inner">
+                  <div class="item-title">被遗弃的公主<span class="tel">13800138000</span></div>
+                  <div class="item-text">杭州西湖文三万塘路252号东方通信大厦620东方通信大厦620东方通信大厦620</div>
+                </div>
+                <div class="item-after item-edit"><span class="icon icon-edit"></span></div>
+              </div>
+            </div>
+            <!-- Swipeout actions right -->
+            <div class="swipeout-actions-right">
+              <!-- Swipeout actions links/buttons -->
+              <a class="swipeout-close" href="#">btn1</a>
+              <a class="swipeout-close swipeout-delete" href="#">删除</a>
+            </div>
           </li>
         </ul>
         <div class="content-block">
